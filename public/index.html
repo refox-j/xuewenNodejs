@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/inx.css">
+    <script>
+        window.addEventListener("DOMContentLoaded",function(){
+            var ajax=new XMLHttpRequest();
+         
+            ajax.onreadystatechange=function(){
+                if(ajax.status==200 && ajax.readyState==4){
+                    var d1= document.getElementById("d1");
+                    if(ajax.responseText=="111")
+                    d1.innerHTML="进来了哦"
+                }
+            }
+            ajax.open("get",`/user/login/wj&123`,true);
+            ajax.send();
+        });
+    </script>
+</head>
+<body>
+    <div id="d1"></div>
+</body>
+</html>
